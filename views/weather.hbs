@@ -61,7 +61,7 @@ const date=document.getElementById("today_date");
 function current_day(){
     let arr=['Mon','Tue','Wed','Thur','Fri','Sat','Sun'];
     let all=new Date();
-    let din=arr[all.getDay()]
+    let din=arr[all.getDay()+1]
 
     day.innerHTML=din;
 
