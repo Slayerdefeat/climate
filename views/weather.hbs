@@ -59,9 +59,9 @@ const date=document.getElementById("today_date");
 
 
 function current_day(){
-    let arr=['Mon','Tue','Wed','Thur','Fri','Sat','Sun'];
+    let arr=['Sun','Mon','Tue','Wed','Thur','Fri','Sat'];
     let all=new Date();
-    let din=arr[all.getDay()+1]
+    let din=arr[all.getDay()]
 
     day.innerHTML=din;
 
@@ -103,25 +103,25 @@ if(data_json.cod==="404"){
         city_name_O.innerHTML=`${getting[0].name} , ${getting[0].sys.country}`
         temp_val.innerHTML=`<span>${getting[0].main.temp}</span><sup>o</sup>C`;
 if(getting[0].weather[0].main==="Haze"){
-    temp_status.innerHTML=`<i class="fas fa-sun-haze" id="emoji"></i>
+    temp_status.innerHTML=`<i class="fa-solid fa-sun-haze" id="emoji"></i>
 `
 }
 else if(getting[0].weather[0].main==="Drizzle"){
-        temp_status.innerHTML=` <i class="fas fa-cloud-drizzle " id="emoji"></i>
+        temp_status.innerHTML=`<i class="fa-solid fa-cloud-drizzle" id="emoji"></i>
 `
 
 }
 else if(getting[0].weather[0].main==="Rain"){
-        temp_status.innerHTML=`<i class="fas fa-cloud-rain" id="emoji"></i>
+        temp_status.innerHTML=`<i class="fa-solid fa-umbrella" id="emoji"></i>
 `
 
 }
 else if(getting[0].weather[0].main==="Clouds"){
-        temp_status.innerHTML=`<i class="fa fa-cloud"  id="emoji"aria-hidden="true"></i>`
+        temp_status.innerHTML=`<i class="fa-solid fa-cloud" id="emoji"></i>`
 
 }
 else{
-        temp_status.innerHTML=`<i class="fad fa-sun"  id="emoji"></i>`
+        temp_status.innerHTML=`<i class="fa-solid fa-sun" id="emoji"></i>`
 
 }
 
