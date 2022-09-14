@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather-check</title>
 
     {{>link}}
   <style>
@@ -90,7 +90,6 @@ if(cityname_I===""){
 }
 else{
 try{
-console.log('fetcher')
 let url=`https://api.openweathermap.org/data/2.5/weather?q=${cityname_I}&units=metric&appid=d8852330e99405cd021278711e80d328`
     let data=await fetch(url);
 
@@ -101,8 +100,6 @@ if(data_json.cod==="404"){
 }
     
         let getting=[data_json];
-        console.log(getting)
-        console.log(getting[0].weather[0].main,getting[0].name,getting[0].sys.country,getting[0].main.temp)
         city_name_O.innerHTML=`${getting[0].name} , ${getting[0].sys.country}`
         temp_val.innerHTML=`<span>${getting[0].main.temp}</span><sup>o</sup>C`;
 if(getting[0].weather[0].main==="Haze"){
@@ -127,13 +124,11 @@ else{
         temp_status.innerHTML=`<i class="fad fa-sun"  id="emoji"></i>`
 
 }
-console.log(city_name_O,cityname_I,temp_val,temp_status,submitbtn)
 
 }
 
 
 catch(err){
-    console.log('error')
         city_name_O.innerHTML=`Server Error Please try Again!`
 
 }
